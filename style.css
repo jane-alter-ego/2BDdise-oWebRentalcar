@@ -1,0 +1,465 @@
+/* Reset and Basic Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Background Video Styling */
+.videoFondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+.videoFondo video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Navigation Styling */
+nav {
+    width: 100vw;
+    height: 15vh;
+    display: flex;
+    background-color: rgba(2, 183, 183, 0.3);
+    z-index: 10;
+    position: relative;
+}
+
+.nav1, .nav2, .nav3, .nav4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav1 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 33vw;
+
+}
+
+.nav2 {
+    width: 34vw;
+}
+
+.nav3, .nav4 {
+    width: 33vw;
+    position: relative;
+}
+
+.nav2 i {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+
+/* Custom Menu Icon Styling */
+.menu-icon {
+    display: none; /* Hidden by default, shown on tablet/mobile */
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    position: relative;
+}
+
+.menu-icon span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background-color: white;
+    border-radius: 2px;
+    transition: 0.3s ease;
+}
+
+.menu-icon span:nth-child(1) { top: 0; }
+.menu-icon span:nth-child(2) { top: 10px; }
+.menu-icon span:nth-child(3) { top: 20px; }
+
+.menu-icon.active span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 10px;
+}
+
+.menu-icon.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 10px;
+}
+
+/* Default Horizontal Menu */
+.menu-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.menu-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.crear-cuenta-btn {
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Section Styling */
+section {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Desktop, Tablet, and Mobile View Modes */
+.desktop-mode .menu-icon {
+    display: none; /* Hide burger menu icon in desktop mode */
+}
+
+.desktop-mode .menu-links {
+    display: flex; /* Show default menu in desktop mode */
+}
+
+.tablet-mode .menu-icon,
+.mobile-mode .menu-icon {
+    display: block; /* Show burger menu icon in tablet and mobile mode */
+}
+
+.tablet-mode .menu-links,
+.mobile-mode .menu-links {
+    display: none; /* Hide default menu in tablet and mobile mode */
+}
+
+/* Dropdown Menu Style for Tablet and Mobile in Class-Based Mode */
+.menu-links.show {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 128, 128, 0.95);
+    position: fixed; /* Use fixed position to cover the screen */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh; /* Cover full height */
+    padding: 2rem 0;
+    text-align: center;
+    z-index: 1000; /* Very high z-index to ensure visibility */
+}
+
+.menu-links.show li {
+    width: 100%;
+}
+
+.menu-links.show li a {
+    display: block;
+    padding: 1rem 0; /* Adjust padding for better visibility */
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Tablet and Mobile Styles Using Media Queries */
+@media (max-width: 1024px) {
+    /* Show burger menu icon */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Hide default horizontal menu */
+    .menu-links {
+        display: none; /* Hidden by default until triggered */
+        flex-direction: column;
+        background-color: rgba(0, 128, 128, 0.95);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        padding: 2rem 0;
+        text-align: center;
+        z-index: 1000;
+    }
+
+    /* Display the dropdown menu when .show is added */
+    .menu-links.show {
+        display: flex;
+    }
+
+    /* Center links in dropdown */
+    .menu-links li {
+        width: 100%;
+    }
+    
+    .menu-links li a {
+        display: block;
+        width: 100%;
+        padding: 1rem 0;
+        color: white;
+        font-size: 1.5rem;
+    }
+}
+
+/*Section Inicio*/
+#seccion_inicio {
+    margin-top: 50vh;
+}
+
+#seccion_inicio p {
+    color: white; /* Cambia el color del texto a blanco */
+    font-size: 1.2rem; /* Ajusta el tamaño del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Añade sombra al texto */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente detrás del texto */
+    padding: 0.5rem; /* Espacio alrededor del texto */
+    border-radius: 5px; /* Bordes redondeados */
+}
+#seccion_inicio h1 {
+    color: white; /* Cambia el color del texto a blanco */
+    font-size: 2.5rem; /* Ajusta el tamaño del texto */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Añade sombra al texto */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente detrás del texto */
+    padding: 0.5rem; /* Espacio alrededor del texto */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-bottom: 10px;
+    
+}
+button:hover {
+    background-color: rgba(0, 183, 183, 0.5);
+    transition: background-color 0.3s ease;
+}
+
+/* Estilos para el botón Crear Cuenta */
+.crear-cuenta-btn {
+    background-color: transparent;
+    background-image: url(Recursos/IMG/user.png);
+    width: 50px;
+    height: 50px;
+    border: none;
+    margin: 0 0.05rem;
+    cursor: pointer;
+    background-size: cover;
+}
+
+.download-buttons {
+    width: 40vw;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+.download-button {
+    border-radius: 10px;
+    font-size: 2.0rem;
+    flex-direction: row nowrap;
+    padding: 5px;
+}
+
+/*Section Funciones*/
+#seccion_funciones h3 {
+    color: white; /* Cambia el color del texto a blanco */
+    font-size: 1,5rem; /* Ajusta el tamaño del texto */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Añade sombra al texto */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente detrás del texto */
+    padding: 1rem; /* Espacio alrededor del texto */
+    border-radius: 5px 5px 0 0;
+}
+
+.descripcion {
+    display: flex;
+    width: 80vw;
+}
+
+.descripcion-content {
+    margin: 10px;
+}
+
+.descripcion p {
+    color: white; 
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 5px 5px;
+    padding-bottom: 10px;
+}
+
+/* Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.formulario, .mensaje {
+    flex: 1;
+    max-width: 400px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-right: 20px;
+}
+
+.formulario h2, .mensaje h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.formulario label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.formulario input {
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.formulario button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 128, 128, 0.95);
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.mensaje a {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(0, 128, 128, 0.95);
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #888;
+}
+
+/*Section Cataloge*/
+#seccion_catalogo {
+    width: 100%;
+    padding: 3rem 0;
+    text-align: center;
+    background-color: rgba(2, 183, 183, 0.1);
+}
+
+#seccion_funciones h2, #seccion_catalogo h2 {
+    color: white; /* Cambia el color del texto a blanco */
+    font-size: 2rem; /* Ajusta el tamaño del texto */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Añade sombra al texto */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente detrás del texto */
+    padding: 1rem; /* Espacio alrededor del texto */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0 2rem;
+    margin-top: 10px;
+}
+
+.vehiculo {
+    width: 220px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 1rem;
+    transition: transform 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.vehiculo img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.vehiculo h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0.5rem 0;
+}
+
+.vehiculo p {
+    font-size: 1rem;
+    color: #02b7b7;
+    margin-bottom: 1rem;
+}
+
+.vehiculo button {
+    background-color: #02b7b7;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.vehiculo button:hover {
+    background-color: #029999;
+}
+
+.vehiculo:hover {
+    transform: translateY(-5px);
+}
+
+
